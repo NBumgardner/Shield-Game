@@ -28,7 +28,7 @@ class EnergyEnemy extends Enemy
 		setSize(100, 80);
 		offset.set(10, 10);
 		
-		animation.add("walk", [0,1,2,3,4,5,6,7,8,9,10,11], 15);
+		animation.add("walk", [for (i in 0...12) i], 15);
 		
 		maxSpeed = 100;
 		facing = FlxObject.RIGHT;

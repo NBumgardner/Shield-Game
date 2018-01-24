@@ -25,7 +25,7 @@ class BioEnemy extends Enemy
 		setSize(104, 64);
 		offset.set(12, 32);
 		
-		animation.add("walk", [0,1,2,3,4,5,6,7,8,9,10,11], 30);
+		animation.add("walk", [for (i in 0...12) i], 30);
 		
 		maxSpeed = 100;
 		facing = FlxObject.RIGHT;
