@@ -185,7 +185,9 @@ class PlayState extends FlxTransitionableState
 		{
 			character.damaged(enemy.force);
 			if (character.force > 0)
+			{
 				enemy.damaged(character.force);
+			}
 			scoreState.transitionStates(multiplierInactiveTransition);
 		}
 		
@@ -200,27 +202,39 @@ class PlayState extends FlxTransitionableState
 			var separatedY:Bool = FlxObject.separateY(Object1, Object2);
 			
 			//The following casts assume that object2 will be an instance of PlayerChar
-			if(separatedX)
+			if (separatedX)
+			{
 				(cast Object2).wallCollideX = separatedX;
-			if(separatedY)
+			}
+			if (separatedY)
+			{
 				(cast Object2).wallCollideY = separatedY;
+			}
 			
 			return separatedX || separatedY;
 		}
 		else
+		{
 			return false;
+		}
 	}
 	
 	private function conditionalSeparate(Object1:FlxObject, Object2:FlxObject):Bool
 	{
 		//The following casts assume that object1 is the robot, and object2 is the mechanic.
 		if ((cast Object1).wallCollideX)
+		{
 			Object1.immovable = true;
+		}
 		else
+		{
 			Object1.immovable = false;
+		}
 		
 		if ((cast Object2).wallCollideX)
+		{
 			Object2.immovable = true;
+		}
 		else
 		{
 			Object1.immovable = true;
@@ -231,12 +245,18 @@ class PlayState extends FlxTransitionableState
 		
 		
 		if ((cast Object1).wallCollideY)
+		{
 			Object1.immovable = true;
+		}
 		else
+		{
 			Object1.immovable = false;
+		}
 		
 		if ((cast Object2).wallCollideY)
+		{
 			Object2.immovable = true;
+		}
 		else
 		{
 			Object1.immovable = true;
@@ -264,7 +284,9 @@ class PlayState extends FlxTransitionableState
 		if (!_gameStarted)
 		{
 			if (FlxG.keys.anyPressed([W, A, S, D, UP, DOWN, LEFT, RIGHT, SPACE]))
+			{
 				startGame();
+			}
 		}
 		else if (_gameIsOver)
 		{

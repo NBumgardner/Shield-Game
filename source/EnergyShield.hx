@@ -72,26 +72,42 @@ class EnergyShield extends FlxObject
 		var angle = 0.0;
 		
 		if ((cast FlxG.state)._robotChar._left)
+		{
 			angle -= 45;
+		}
 		if ((cast FlxG.state)._robotChar._right)
+		{
 			angle += 45;
+		}
 		if ((cast FlxG.state)._robotChar._down)
+		{
 			if (angle > 0)
-				angle += 15
+			{
+				angle += 15;
+			}
 			else if (angle == 0)
 			{
 				if (projectileCounter % 3 == 2)
+				{
 					angle += 30;
+				}
 				else if (projectileCounter % 3 == 1)
+				{
 					angle -= 30;
+				}
 				// if projectile counter % 3 == 0
 					// Then do not change angle.
 				projectileCounter++;
 			}
 			else
+			{
 				angle -= 15;
+			}
+		}
 		if ((cast FlxG.state)._robotChar._up)
+		{
 			angle /= 2;
+		}
 		
 		proj.velocity.rotate(FlxPoint.weak(0, 0), angle);
 		
@@ -110,14 +126,22 @@ class EnergyShield extends FlxObject
 		if (projMidpoint.distanceTo(shieldMidpoint) > preferredCaughtDist)
 		{	
 			if (proj.x > shieldMidpoint.x)
+			{
 				proj.x -= 1;
+			}
 			else
+			{
 				proj.x += 1;
+			}
 			
 			if (proj.y > shieldMidpoint.y)
+			{
 				proj.y -= 1;
+			}
 			else
+			{
 				proj.y += 1;
+			}
 		}
 	}
 	
@@ -134,6 +158,8 @@ class EnergyShield extends FlxObject
 	public function updateProjectiles()
 	{
 		if (!hidden)
+		{
 			caughtProjectiles.forEach(moveProjectiles);
+		}
 	}
 }

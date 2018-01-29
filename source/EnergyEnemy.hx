@@ -64,9 +64,13 @@ class EnergyEnemy extends Enemy
 	private override function normMoveTransition():Int
 	{
 		if (facing == FlxObject.RIGHT)
+		{
 			xSpeed = EnergyEnemy.maxXSpeed;
+		}
 		else if (facing == FlxObject.LEFT)
+		{
 			xSpeed = -EnergyEnemy.maxXSpeed;
+		}
 		
 		actionState.activeState = normMoveState;
 		actionState.nextTransition = firingProjTransition;
@@ -76,9 +80,13 @@ class EnergyEnemy extends Enemy
 	private override function firingProjTransition():Int
 	{
 		if (facing == FlxObject.RIGHT)
+		{
 			facing = FlxObject.LEFT;
+		}
 		else if (facing == FlxObject.LEFT)
+		{
 			facing = FlxObject.RIGHT;
+		}
 		
 		xSpeed = 0;
 		

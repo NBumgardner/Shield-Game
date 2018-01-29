@@ -174,7 +174,9 @@ class Enemy extends DamageableActor
 	public override function update(elapsed:Float)
 	{
 		if (!isOnScreen())
+		{
 			kill();
+		}
 		actionState.update();
 		super.update(elapsed);
 	}

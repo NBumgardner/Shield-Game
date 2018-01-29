@@ -37,9 +37,13 @@ class PlayerChar extends DamageableActor
 	private function movement():Void
 	{	
 		if (_up && _down)
+		{
 			_up = _down = false;
+		}
 		if (_left && _right)
+		{
 			_left = _right = false;
+		}
 		
 		if (_up || _down || _left || _right)
 		{
@@ -63,17 +67,22 @@ class PlayerChar extends DamageableActor
 			{
 				mA = 90;
 				if (_left)
+				{
 					mA += 45;
+				}
 				else if (_right)
+				{
 					mA -= 45;
+				}
 				facing = FlxObject.DOWN;
 			}
-			else if (_left){
+			else if (_left)
+			{
 				mA = 180;
 				facing = FlxObject.LEFT;
 			}
-				
-			else if (_right){
+			else if (_right)
+			{
 				mA = 0;
 				facing = FlxObject.RIGHT;
 			}
@@ -99,8 +108,10 @@ class PlayerChar extends DamageableActor
 		}
 		else
 		{
-			if(!noMoveAnim)
+			if (!noMoveAnim)
+			{
 				animation.play("u");
+			}
 			velocity.set(0, 0);
 		}
 	}

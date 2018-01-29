@@ -71,9 +71,13 @@ class PhysicalEnemy extends Enemy
 	private override function normMoveTransition():Int
 	{
 		if (facing == FlxObject.RIGHT)
+		{
 			xSpeed = PhysicalEnemy.maxXSpeed;
+		}
 		else if (facing == FlxObject.LEFT)
+		{
 			xSpeed = -PhysicalEnemy.maxXSpeed;
+		}
 		
 		actionState.activeState = normMoveState;
 		actionState.nextTransition = firingProjTransition;
@@ -83,9 +87,13 @@ class PhysicalEnemy extends Enemy
 	private override function firingProjTransition():Int
 	{
 		if (facing == FlxObject.RIGHT)
+		{
 			facing = FlxObject.LEFT;
+		}
 		else if (facing == FlxObject.LEFT)
+		{
 			facing = FlxObject.RIGHT;
+		}
 		
 		xSpeed = 0;
 		
@@ -99,7 +107,9 @@ class PhysicalEnemy extends Enemy
 	override public function kill():Void 
 	{
 		if (health == 0)
+		{
 			spawnRepairPowerup();
+		}
 		super.kill();
 	}
 	

@@ -26,11 +26,14 @@ class FSM
 		{
 			activeState();
 			
-			if(stateTimer > 0)
+			if (stateTimer > 0)
+			{
 				stateTimer--;
-			
+			}
 			else if (stateTimer == 0)
+			{
 				stateTimer = nextTransition();
+			}
 		}
 	}
 }

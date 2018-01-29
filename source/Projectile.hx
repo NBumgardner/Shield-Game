@@ -80,9 +80,13 @@ class Projectile extends FlxSprite
 	override public function kill():Void
 	{
 		if (projectileGroup == 1)
+		{
 			(cast FlxG.state)._grpEnemyProj.remove(cast this, true);
+		}
 		else if (projectileGroup == 2)
+		{
 			(cast FlxG.state)._grpPlayerProj.remove(cast this, true);
+		}
 		projectileGroup = 0;
 		
 		if (currentlyCaught)

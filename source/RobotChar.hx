@@ -108,10 +108,14 @@ class RobotChar extends PlayerChar
 		if (!isDead)
 		{
 			if (!isBroken)
+			{
 				shieldState.transitionStates(brokenTransition);
+			}
 			healthState.transitionStates(recoveryTransition);
 			if (alreadyHurtColor)
+			{
 				adjustColor(injuredColor);
+			}
 			animation.play("defeated");
 			offset.x += 24;
 			offset.y += 32;
@@ -140,9 +144,13 @@ class RobotChar extends PlayerChar
 	private function inactiveShieldState():Void
 	{
 		if (spacebar)
+		{
 			shieldState.transitionStates(activatingTransition);
+		}
 		else if (shieldCurrCapacity > 0)
+		{
 			Math.max(shieldCurrCapacity -= shieldCapacityCooldown, 0);
+		}
 		
 		return;
 	}
@@ -160,7 +168,9 @@ class RobotChar extends PlayerChar
 	private function activatingShieldState():Void
 	{
 		if (!spacebar)
+		{
 			shieldState.transitionStates(releasingTransitionEarly);
+		}
 		return;
 	}
 	
@@ -179,9 +189,13 @@ class RobotChar extends PlayerChar
 	private function activeShieldState():Void
 	{
 		if (!spacebar)
+		{
 			shieldState.transitionStates(releasingTransition);
+		}
 		else if (shieldCurrCapacity > shieldMaxCapacity)
+		{
 			shieldState.transitionStates(brokenTransition);
+		}
 	}
 	
 	private function releasingTransition():Int
@@ -226,7 +240,9 @@ class RobotChar extends PlayerChar
 	private function brokenShieldState():Void
 	{
 		if (shieldCurrCapacity > 0)
+		{
 			Math.max(shieldCurrCapacity -= shieldCapacityCooldown, 0);
+		}
 		
 		if (shieldCurrCapacity <= 0)
 		{

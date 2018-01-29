@@ -72,9 +72,13 @@ class EnemySpawner extends FlxSprite
 	private function checkTimer(timerLength:Int, timerValue:Int):Bool
 	{
 		if (timerValue == timerLength)
+		{
 			return true;
+		}
 		else
+		{
 			return false;
+		}
 	}
 	
 	private function spawnPhysEnemy():Void

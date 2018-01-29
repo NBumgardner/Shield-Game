@@ -75,9 +75,13 @@ class DamageableActor extends FlxSprite
 	private function recoveryState():Void
 	{
 		if (healthState.stateTimer % 16 < 8)
+		{
 			set_alpha(0);
+		}
 		else
+		{
 			set_alpha(1);
+		}
 	}
 	
 	public function damaged(damage:Float):Void
