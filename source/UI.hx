@@ -63,14 +63,14 @@ class UI
 		
 		var center = mechanic.getMidpoint();
 		
-		var up  	= new FlxText(center.x, center.y - 92, "UP", 18);
-		var down 	= new FlxText(center.x, center.y + 64, "DOWN", 18);
-		var left	= new FlxText(center.x - 48, center.y, "LEFT", 18);
-		var right	= new FlxText(center.x + 48, center.y, "RIGHT", 18);
+		var up    = new FlxText(center.x, center.y - 92, 0, "UP", 18);
+		var down  = new FlxText(center.x, center.y + 64, 0, "DOWN", 18);
+		var left  = new FlxText(center.x - 48, center.y, 0, "LEFT", 18);
+		var right = new FlxText(center.x + 48, center.y, 0, "RIGHT", 18);
 		
-		up.x	-= up.width / 2;
-		down.x 	-= down.width / 2;
-		left.x 	-= left.width;
+		up.x   -= up.width / 2;
+		down.x -= down.width / 2;
+		left.x -= left.width;
 		
 		uiInitialMenu.add(up);
 		uiInitialMenu.add(down);
@@ -80,11 +80,11 @@ class UI
 		
 		center = robot.getMidpoint();
 		
-		up  	= new FlxText(center.x, center.y - 96, "W", 18);
-		down 	= new FlxText(center.x, center.y + 80, "S", 18);
-		left	= new FlxText(center.x - 80, center.y, "A", 18);
-		right	= new FlxText(center.x + 80, center.y, "D", 18);
-		var space = new FlxText(center.x, center.y - 144, "SPACE", 32);
+		up        = new FlxText(center.x, center.y - 96, 0, "W", 18);
+		down      = new FlxText(center.x, center.y + 80, 0, "S", 18);
+		left      = new FlxText(center.x - 80, center.y, 0, "A", 18);
+		right     = new FlxText(center.x + 80, center.y, 0, "D", 18);
+		var space = new FlxText(center.x, center.y - 144, 0, "SPACE", 32);
 		space.color = FlxColor.CYAN;
 		
 		up.x	-= up.width / 2;
