@@ -306,5 +306,22 @@ class PlayState extends FlxTransitionableState
 		scoreState.update();
 		_scoreText.text = Std.string(playerScore);
 		_multText.text = "x" + Std.string(scoreMultiplier);
+		
+		#if html5
+		if (FlxG.sound.music == null)
+		{
+			FlxG.sound.playMusic(AssetPaths.BackgroundIntroMenuState__mp3, 1, true);
+		}
+		#elseif flash
+		if (FlxG.sound.music == null)
+		{
+			FlxG.sound.playMusic(AssetPaths.BackgroundIntroMenuState__mp3, 1, true);
+		}
+		#else
+		if (FlxG.sound.music == null)
+		{
+			FlxG.sound.playMusic(AssetPaths.BackgroundIntroMenuState__ogg, 1, true);
+		}
+		#end
 	}
 }
